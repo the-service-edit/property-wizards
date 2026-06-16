@@ -277,7 +277,7 @@ header.nav.compact{padding-top:9px;padding-bottom:9px;box-shadow:0 8px 24px rgba
 .svc-item .no{font-size:13px;font-weight:600;color:var(--gold-2);letter-spacing:.08em}
 .svc-item .nm{font-size:clamp(1.3rem,2.6vw,1.9rem);font-weight:400;color:#fff}
 .svc-item .ds{grid-column:2;font-size:.96rem;color:rgba(243,246,250,.72);max-width:62ch;margin-top:4px}
-@media(min-width:820px){.svc-item{grid-template-columns:auto 22ch 1fr}.svc-item .ds{grid-column:auto;margin-top:0}.svc-item .nm{white-space:nowrap}}
+@media(min-width:820px){.svc-item{grid-template-columns:auto clamp(230px,26vw,380px) 1fr;column-gap:clamp(24px,4vw,56px)}.svc-item .ds{grid-column:auto;margin-top:0}}
 
 /* ===== TESTIMONIALS ===== */
 .voices{padding:clamp(80px,11vw,150px) 0;background:var(--paper-2)}
