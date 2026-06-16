@@ -207,6 +207,14 @@ header.nav.compact{padding-top:9px;padding-bottom:9px;box-shadow:0 8px 24px rgba
 .badge .cap .t{font-size:12px;font-weight:600;color:var(--blue-deep);line-height:1.3}
 .badge .cap .y{font-size:11px;font-weight:500;color:var(--gold-deep);letter-spacing:.08em;margin-top:3px}
 .trophy .more{text-align:center;margin-top:clamp(34px,4vw,52px);font-size:13.5px;color:rgba(243,246,250,.78);letter-spacing:.02em;max-width:70ch;margin-left:auto;margin-right:auto}
+/* award marquee */
+.marquee{width:100vw;position:relative;left:50%;margin-left:-50vw;overflow:hidden;margin-top:clamp(36px,5vw,58px);-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.mtrack{display:flex;align-items:center;gap:clamp(16px,2vw,30px);width:max-content;animation:scrollx 48s linear infinite}
+.marquee:hover .mtrack{animation-play-state:paused}
+@keyframes scrollx{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.m-badge{flex:0 0 auto;height:clamp(92px,11vw,124px);background:#fff;border-radius:12px;padding:16px clamp(18px,2vw,26px);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px rgba(0,0,0,.2)}
+.m-badge img{max-height:100%;max-width:180px;width:auto;object-fit:contain}
+@media(prefers-reduced-motion:reduce){.mtrack{animation:none}.marquee{overflow-x:auto}}
 .trophy .more b{color:var(--gold-2);font-weight:600}
 
 /* ===== STAT BAND ===== */
@@ -402,18 +410,22 @@ footer{background:var(--blue-ink);color:rgba(243,246,250,.72);padding:clamp(60px
       <h2>Proof you're in <b>the right hands</b></h2>
       <p>Choosing who buys for you is a big decision. These are the awards and accreditations that say we will do right by you, awarded by the Real Estate Institute of Western Australia and nationally, year after year.</p>
     </div>
-    <div class="badge-grid">
-      <div class="badge reveal"><div class="imgbox"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/Email-Buyers-Agent-of-the-Year-Winner.png" alt="National Buyer's Agent of the Year 2020 award, REIA"></div><div class="cap"><div class="t">National Buyer's Agent of the Year</div><div class="y">REIA · 2020</div></div></div>
-      <div class="badge reveal"><div class="imgbox"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/2021_REIWA-Buyers-Agent-of-the-Year-1-e1630754771319.png" alt="REIWA Buyer's Agent of the Year 2021 award"></div><div class="cap"><div class="t">Buyer's Agent of the Year</div><div class="y">REIWA · 2021</div></div></div>
-      <div class="badge reveal"><div class="imgbox"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/REIWA-2020-logo-e1594562391795.png" alt="REIWA Buyer's Agent of the Year 2020 award"></div><div class="cap"><div class="t">Buyer's Agent of the Year</div><div class="y">REIWA · 2020</div></div></div>
-      <div class="badge reveal"><div class="imgbox"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/2019-REIWA-buyers-agent-award-600x338-1.png" alt="REIWA Buyer's Agent of the Year 2019 award"></div><div class="cap"><div class="t">Buyer's Agent of the Year</div><div class="y">REIWA · 2019</div></div></div>
-      <div class="badge reveal"><div class="imgbox"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/2009-REIWA-Award.jpeg" alt="REIWA Buyer's Agent of the Year 2009 award"></div><div class="cap"><div class="t">Buyer's Agent of the Year</div><div class="y">REIWA · 2009</div></div></div>
-      <div class="badge reveal"><div class="imgbox"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/2008-REIWA-Award.jpeg" alt="REIWA Buyer's Agent of the Year 2008 award"></div><div class="cap"><div class="t">Buyer's Agent of the Year</div><div class="y">REIWA · 2008</div></div></div>
-      <div class="badge reveal"><div class="imgbox"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/2007-REIWA-Award.jpeg" alt="REIWA Buyer's Agent of the Year 2007 award"></div><div class="cap"><div class="t">Buyer's Agent of the Year</div><div class="y">REIWA · 2007</div></div></div>
-      <div class="badge reveal"><div class="imgbox"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/australian-customer-service-excellence-gold-award-logo-2015-for-email-231x300.jpeg" alt="Gold Award for Service Excellence 2015"></div><div class="cap"><div class="t">Gold, Service Excellence</div><div class="y">Aust. CS Awards · 2015</div></div></div>
-      <div class="badge reveal"><div class="imgbox"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/australian-customer-service-excellence-gold-award-logo-2012_High-Res-1.jpeg" alt="Gold Award for Service Excellence 2012"></div><div class="cap"><div class="t">Gold, Service Excellence</div><div class="y">Aust. CS Awards · 2012</div></div></div>
-      <div class="badge reveal"><div class="imgbox"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/2021-REIA-finalist-e1630754947590.png" alt="REIA National Awards for Excellence finalist 2021"></div><div class="cap"><div class="t">National Awards Finalist</div><div class="y">REIA · 2021</div></div></div>
+  </div>
+  <div class="marquee" aria-label="Awards and accreditations">
+    <div class="mtrack" id="mtrack">
+      <span class="m-badge"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/Email-Buyers-Agent-of-the-Year-Winner.png" alt="National Buyer's Agent of the Year 2020, REIA"></span>
+      <span class="m-badge"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/2021_REIWA-Buyers-Agent-of-the-Year-1-e1630754771319.png" alt="REIWA Buyer's Agent of the Year 2021"></span>
+      <span class="m-badge"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/REIWA-2020-logo-e1594562391795.png" alt="REIWA Buyer's Agent of the Year 2020"></span>
+      <span class="m-badge"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/2019-REIWA-buyers-agent-award-600x338-1.png" alt="REIWA Buyer's Agent of the Year 2019"></span>
+      <span class="m-badge"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/2009-REIWA-Award.jpeg" alt="REIWA Buyer's Agent of the Year 2009"></span>
+      <span class="m-badge"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/2008-REIWA-Award.jpeg" alt="REIWA Buyer's Agent of the Year 2008"></span>
+      <span class="m-badge"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/2007-REIWA-Award.jpeg" alt="REIWA Buyer's Agent of the Year 2007"></span>
+      <span class="m-badge"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/australian-customer-service-excellence-gold-award-logo-2015-for-email-231x300.jpeg" alt="Gold Award for Service Excellence 2015"></span>
+      <span class="m-badge"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/australian-customer-service-excellence-gold-award-logo-2012_High-Res-1.jpeg" alt="Gold Award for Service Excellence 2012"></span>
+      <span class="m-badge"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/2021-REIA-finalist-e1630754947590.png" alt="REIA National Awards finalist 2021"></span>
     </div>
+  </div>
+  <div class="wrap">
     <p class="more reveal">And again, <b>REIWA Buyer's Agent of the Year in 2022, 2023 &amp; 2024</b>: six consecutive years, plus a second National win in 2022 and induction into the <b>REIWA Buyer's Agent Hall of Fame</b>.</p>
   </div>
 </section>
@@ -655,6 +667,8 @@ const nav=document.getElementById('nav');
 addEventListener('scroll',()=>{nav.classList.toggle('compact',scrollY>60)},{passive:true});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// duplicate award marquee for seamless loop
+const mt=document.getElementById('mtrack');if(mt)mt.innerHTML+=mt.innerHTML;
 // testimonials
 const slides=[...document.querySelectorAll('.qq')],dw=document.getElementById('dots');
 let idx=0,timer;
