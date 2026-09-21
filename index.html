@@ -219,7 +219,11 @@ header.nav.compact{padding-top:9px;padding-bottom:9px;box-shadow:0 8px 24px rgba
 .hon .yrs b{color:var(--gold-2);font-weight:600}
 .hon .note{font-size:13px;color:rgba(243,246,250,.72);margin-top:12px;line-height:1.6}
 .also span{white-space:nowrap}
-.also{max-width:860px;margin:clamp(32px,4vw,48px) auto 0;text-align:center;font-size:13.5px;line-height:1.8;color:rgba(243,246,250,.72)}
+.logos{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(10px,2vw,26px);margin:clamp(36px,4.5vw,52px) auto 0}
+.logos span{width:clamp(56px,15vw,96px);aspect-ratio:1;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 10px 24px rgba(0,0,0,.25)}
+.logos img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.logos span.pad img{object-fit:contain;border-radius:0;width:72%;height:72%}
+.also{max-width:860px;margin:clamp(22px,3vw,30px) auto 0;text-align:center;font-size:13.5px;line-height:1.8;color:rgba(243,246,250,.72)}
 .also b{color:#fff;font-weight:500}
 .trophy .more b{color:var(--gold-2);font-weight:600}
 
@@ -401,41 +405,6 @@ footer{background:var(--blue-ink);color:rgba(243,246,250,.72);padding:clamp(60px
   </div>
 </section>
 
-<!-- ===== TROPHY WALL ===== -->
-<section class="trophy" id="awards">
-  <div class="wrap">
-    <div class="head reveal">
-      <span class="kicker">Why buyers trust us</span>
-      <h2>Proof you're in <b>the right hands</b></h2>
-      <p>Choosing who buys for you is a big decision. Here's the independent record behind ours.</p>
-    </div>
-  </div>
-  <div class="wrap">
-    <div class="honours">
-      <div class="hon reveal">
-        <span class="org">REIA · National</span>
-        <div class="n">2×</div>
-        <h3>National Buyer's Agent of the Year</h3>
-        <p class="yrs">2020 · 2022</p>
-      </div>
-      <div class="hon lead reveal">
-        <span class="org">REIWA · Western Australia</span>
-        <div class="n">9×</div>
-        <h3>Buyer's Agent of the Year</h3>
-        <p class="yrs"><b>2019 · 2020 · 2021 · 2022 · 2023 · 2024</b><br><span>2007 · 2008 · 2009</span></p>
-        <p class="note">Six years in a row.</p>
-      </div>
-      <div class="hon reveal">
-        <span class="org">REIWA</span>
-        <div class="n">2</div>
-        <h3>Directors in the Hall of Fame</h3>
-        <p class="note">The only buyer's agency in Australia with two.</p>
-      </div>
-    </div>
-    <p class="also reveal">Also: <b>REIA National finalist</b> <span>2007, 2008, 2010,</span> <span>2021, 2023, 2024 &amp; 2025</span> · <b>Gold Award, Australian Customer Service Awards</b> <span>2012 &amp; 2015</span></p>
-  </div>
-</section>
-
 <!-- ===== POSITIONING ===== -->
 <section class="position wrap centered">
   <div class="narrow reveal">
@@ -587,6 +556,48 @@ footer{background:var(--blue-ink);color:rgba(243,246,250,.72);padding:clamp(60px
       <button class="faq-q">When was Property Wizards established?</button>
       <div class="faq-a"><p>Property Wizards was established in 2004 and is one of the first buyer's agencies in Perth.</p></div>
     </div>
+  </div>
+</section>
+
+<!-- ===== TROPHY WALL ===== -->
+<section class="trophy" id="awards">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="kicker">Why buyers trust us</span>
+      <h2>Proof you're in <b>the right hands</b></h2>
+      <p>Choosing who buys for you is a big decision. Here's the independent record behind ours.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="honours">
+      <div class="hon reveal">
+        <span class="org">REIA · National</span>
+        <div class="n">2×</div>
+        <h3>National Buyer's Agent of the Year</h3>
+        <p class="yrs">2020 · 2022</p>
+      </div>
+      <div class="hon lead reveal">
+        <span class="org">REIWA · Western Australia</span>
+        <div class="n">9×</div>
+        <h3>Buyer's Agent of the Year</h3>
+        <p class="yrs"><b>2019 · 2020 · 2021 · 2022 · 2023 · 2024</b><br><span>2007 · 2008 · 2009</span></p>
+        <p class="note">Six years in a row.</p>
+      </div>
+      <div class="hon reveal">
+        <span class="org">REIWA</span>
+        <div class="n">2</div>
+        <h3>Directors in the Hall of Fame</h3>
+        <p class="note">The only buyer's agency in Australia with two.</p>
+      </div>
+    </div>
+    <div class="logos reveal">
+      <span><img src="images/award-reiwa-2019.webp" alt="REIWA Buyer's Agent of the Year 2019" width="72" height="72" loading="lazy"></span>
+      <span><img src="images/award-reiwa-2020.webp" alt="REIWA Buyer's Agent of the Year 2020" width="72" height="72" loading="lazy"></span>
+      <span><img src="images/award-reiwa-2021.webp" alt="REIWA Buyer's Agent of the Year 2021" width="72" height="72" loading="lazy"></span>
+      <span><img src="images/award-reia-finalist-2021.webp" alt="REIA National Buyer's Agent of the Year finalist 2021" width="72" height="72" loading="lazy"></span>
+      <span class="pad"><img src="images/award-gold-2015.webp" alt="Gold Award, Australian Customer Service Awards 2015" width="72" height="72" loading="lazy"></span>
+    </div>
+    <p class="also reveal">Also: <b>REIA National finalist</b> <span>2007, 2008, 2010,</span> <span>2021, 2023, 2024 &amp; 2025</span> · <b>Gold Award, Australian Customer Service Awards</b> <span>2012 &amp; 2015</span></p>
   </div>
 </section>
 
