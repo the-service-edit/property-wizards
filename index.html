@@ -108,10 +108,10 @@
 </script>
 <style>
 :root{
-  --blue:#1276BC;
-  --blue-mid:#0F5E97;
-  --blue-deep:#0B3F66;
-  --blue-ink:#082A45;
+  --blue:#0575B5;
+  --blue-mid:#045F93;
+  --blue-deep:#043F62;
+  --blue-ink:#032A42;
   --gold:#EDA600;
   --gold-2:#F6B82B;
   --gold-deep:#B98400;
@@ -174,7 +174,7 @@ header.nav.compact{padding-top:9px;padding-bottom:9px;box-shadow:0 8px 24px rgba
 /* ===== HERO ===== */
 .hero{position:relative;min-height:calc(100vh - 110px);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:var(--blue-ink);overflow:hidden}
 .hero .photo{position:absolute;inset:0;background:url('https://propertywizards.com.au/wp-content/uploads/2022/02/r-architecture-2gDwlIim3Uw-unsplash-e1644552881118.jpg') center 45%/cover no-repeat}
-.hero .grade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,30,49,.78) 0%,rgba(11,63,102,.55) 40%,rgba(8,34,55,.66) 70%,rgba(6,22,37,.92) 100%)}
+.hero .grade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,30,49,.78) 0%,rgba(4,63,98,.55) 40%,rgba(8,34,55,.66) 70%,rgba(6,22,37,.92) 100%)}
 .hero .vig{position:absolute;inset:0;background:radial-gradient(130% 100% at 50% 40%,transparent 32%,rgba(5,18,30,.6) 100%)}
 .hero-inner{position:relative;z-index:3;padding:70px 22px 0;display:flex;flex-direction:column;align-items:center}
 .hero .kicker{color:var(--gold-2);margin-bottom:22px}
@@ -207,14 +207,24 @@ header.nav.compact{padding-top:9px;padding-bottom:9px;box-shadow:0 8px 24px rgba
 .badge .cap .t{font-size:12px;font-weight:600;color:var(--blue-deep);line-height:1.3}
 .badge .cap .y{font-size:11px;font-weight:500;color:var(--gold-deep);letter-spacing:.08em;margin-top:3px}
 .trophy .more{text-align:center;margin-top:clamp(34px,4vw,52px);font-size:13.5px;color:rgba(243,246,250,.78);letter-spacing:.02em;max-width:70ch;margin-left:auto;margin-right:auto}
-/* award marquee */
-.marquee{width:100vw;position:relative;left:50%;margin-left:-50vw;overflow:hidden;margin-top:clamp(36px,5vw,58px);-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
-.mtrack{display:flex;align-items:center;gap:clamp(16px,2vw,30px);width:max-content;animation:scrollx 48s linear infinite}
-.marquee:hover .mtrack{animation-play-state:paused}
-@keyframes scrollx{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.m-badge{flex:0 0 auto;height:clamp(92px,11vw,124px);background:#fff;border-radius:12px;padding:16px clamp(18px,2vw,26px);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px rgba(0,0,0,.2)}
-.m-badge img{max-height:100%;max-width:180px;width:auto;object-fit:contain}
-@media(prefers-reduced-motion:reduce){.mtrack{animation:none}.marquee{overflow-x:auto}}
+/* honours board */
+.honours{display:grid;grid-template-columns:1fr;gap:clamp(16px,2vw,24px);max-width:1120px;margin:0 auto}
+@media(min-width:900px){.honours{grid-template-columns:1fr 1.35fr 1fr}}
+.hon{position:relative;border:1px solid rgba(246,184,43,.38);border-radius:14px;padding:clamp(28px,3vw,40px) clamp(22px,2.4vw,32px);text-align:center;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02));display:flex;flex-direction:column;align-items:center}
+.hon.lead{border-color:var(--gold-2);background:linear-gradient(180deg,rgba(246,184,43,.14),rgba(246,184,43,.03))}
+.hon .ic{width:44px;height:44px;color:var(--gold-2);margin-bottom:18px}
+.hon .org{font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(243,246,250,.66)}
+.hon h3{color:#fff;font-weight:500;font-size:clamp(1.2rem,1.7vw,1.45rem);line-height:1.25;margin:10px 0 20px;max-width:18ch;text-wrap:balance}
+.hon.lead h3{max-width:none}
+.also span{white-space:nowrap}
+.hon .n{font-size:clamp(3rem,5vw,4rem);font-weight:600;color:var(--gold-2);line-height:1}
+.hon .n small{display:block;font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(243,246,250,.66);margin-top:10px}
+.yrs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:22px}
+.yrs span{font-size:13px;font-weight:600;letter-spacing:.04em;padding:7px 12px;border-radius:999px;border:1px solid rgba(246,184,43,.45);color:var(--gold-2)}
+.yrs span.hot{background:var(--gold-2);border-color:var(--gold-2);color:var(--blue-ink)}
+.hon .note{font-size:12.5px;color:rgba(243,246,250,.74);margin-top:14px;line-height:1.6}
+.also{max-width:860px;margin:clamp(32px,4vw,48px) auto 0;text-align:center;font-size:13.5px;line-height:1.8;color:rgba(243,246,250,.72)}
+.also b{color:#fff;font-weight:500}
 .trophy .more b{color:var(--gold-2);font-weight:600}
 
 /* ===== STAT BAND ===== */
@@ -411,22 +421,32 @@ footer{background:var(--blue-ink);color:rgba(243,246,250,.72);padding:clamp(60px
       <p>Choosing who buys for you is a big decision. These are the awards and accreditations that say we will do right by you, awarded by the Real Estate Institute of Western Australia and nationally, year after year.</p>
     </div>
   </div>
-  <div class="marquee" aria-label="Awards and accreditations">
-    <div class="mtrack" id="mtrack">
-      <span class="m-badge"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/Email-Buyers-Agent-of-the-Year-Winner.png" alt="National Buyer's Agent of the Year 2020, REIA"></span>
-      <span class="m-badge"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/2021_REIWA-Buyers-Agent-of-the-Year-1-e1630754771319.png" alt="REIWA Buyer's Agent of the Year 2021"></span>
-      <span class="m-badge"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/REIWA-2020-logo-e1594562391795.png" alt="REIWA Buyer's Agent of the Year 2020"></span>
-      <span class="m-badge"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/2019-REIWA-buyers-agent-award-600x338-1.png" alt="REIWA Buyer's Agent of the Year 2019"></span>
-      <span class="m-badge"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/2009-REIWA-Award.jpeg" alt="REIWA Buyer's Agent of the Year 2009"></span>
-      <span class="m-badge"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/2008-REIWA-Award.jpeg" alt="REIWA Buyer's Agent of the Year 2008"></span>
-      <span class="m-badge"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/2007-REIWA-Award.jpeg" alt="REIWA Buyer's Agent of the Year 2007"></span>
-      <span class="m-badge"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/australian-customer-service-excellence-gold-award-logo-2015-for-email-231x300.jpeg" alt="Gold Award for Service Excellence 2015"></span>
-      <span class="m-badge"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/australian-customer-service-excellence-gold-award-logo-2012_High-Res-1.jpeg" alt="Gold Award for Service Excellence 2012"></span>
-      <span class="m-badge"><img src="https://propertywizards.com.au/wp-content/uploads/2022/02/2021-REIA-finalist-e1630754947590.png" alt="REIA National Awards finalist 2021"></span>
-    </div>
-  </div>
   <div class="wrap">
-    <p class="more reveal">And again, <b>REIWA Buyer's Agent of the Year in 2022, 2023 &amp; 2024</b>: six consecutive years, plus a second National win in 2022 and induction into the <b>REIWA Buyer's Agent Hall of Fame</b>.</p>
+    <div class="honours">
+      <div class="hon reveal">
+        <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M24 6l5.4 11 12.1 1.8-8.8 8.5 2.1 12L24 33.6 13.2 39.3l2.1-12-8.8-8.5 12.1-1.8z"/></svg>
+        <span class="org">REIA · National</span>
+        <h3>Australia's Buyer's Agent of the Year</h3>
+        <div class="n">2×<small>National winner</small></div>
+        <div class="yrs"><span class="hot">2022</span><span class="hot">2020</span></div>
+      </div>
+      <div class="hon lead reveal">
+        <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 8h18v10a9 9 0 0 1-18 0z"/><path d="M15 12H9v3a6 6 0 0 0 6 6M33 12h6v3a6 6 0 0 1-6 6"/><path d="M24 27v7M17 41h14M19 41l1-7h8l1 7"/></svg>
+        <span class="org">REIWA · Western Australia</span>
+        <h3>Buyer's Agent of the Year</h3>
+        <div class="n">9×<small>REIWA winner</small></div>
+        <div class="yrs"><span class="hot">2024</span><span class="hot">2023</span><span class="hot">2022</span><span class="hot">2021</span><span class="hot">2020</span><span class="hot">2019</span><span>2009</span><span>2008</span><span>2007</span></div>
+        <p class="note">Six years in a row, 2019 to 2024.</p>
+      </div>
+      <div class="hon reveal">
+        <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 5l6 13M32 5l-6 13"/><circle cx="24" cy="30" r="12"/><path d="M24 24l1.8 3.7 4 .6-2.9 2.8.7 4L24 33.2 20.4 35l.7-4-2.9-2.8 4-.6z"/></svg>
+        <span class="org">REIWA</span>
+        <h3>Buyer's Agent Hall of Fame</h3>
+        <div class="n">2<small>Directors inducted</small></div>
+        <p class="note">The only buyer's agency in Australia with two Hall of Fame inductees.</p>
+      </div>
+    </div>
+    <p class="also reveal">Also: <b>REIA National finalist</b> <span>2007, 2008, 2010,</span> <span>2021, 2023, 2024 &amp; 2025</span> · <b>Gold Award, Australian Customer Service Awards</b> <span>2012 &amp; 2015</span></p>
   </div>
 </section>
 
@@ -667,8 +687,6 @@ const nav=document.getElementById('nav');
 addEventListener('scroll',()=>{nav.classList.toggle('compact',scrollY>60)},{passive:true});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-// duplicate award marquee for seamless loop
-const mt=document.getElementById('mtrack');if(mt)mt.innerHTML+=mt.innerHTML;
 // testimonials
 const slides=[...document.querySelectorAll('.qq')],dw=document.getElementById('dots');
 let idx=0,timer;
